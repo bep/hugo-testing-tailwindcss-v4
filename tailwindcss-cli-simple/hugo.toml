@@ -1,0 +1,14 @@
+baseURL      = 'https://example.org/'
+title        = 'Tailwind CSS CLI Simple'
+disableKinds = ['taxonomy', 'term', "page", "section", "sitemap"]
+
+[outputs]
+    home = ["html"]
+
+[[build.cachebusters]]
+    source = 'layouts/.*'
+    target = 'css'
+
+[markup]
+    [markup.highlight]
+        style = 'github'

@@ -1,0 +1,62 @@
+{
+  "htmlElements": {
+    "tags": [
+      "a",
+      "article",
+      "blockquote",
+      "body",
+      "code",
+      "div",
+      "em",
+      "h1",
+      "h2",
+      "h3",
+      "head",
+      "html",
+      "li",
+      "meta",
+      "ol",
+      "p",
+      "pre",
+      "script",
+      "strong",
+      "title",
+      "ul"
+    ],
+    "classes": [
+      "bg-blue-50",
+      "bg-green-50",
+      "bg-indigo-50",
+      "bg-orange-50",
+      "font-bold",
+      "highlight",
+      "markdown",
+      "max-w-[90ch]",
+      "mb-4",
+      "md:p-6",
+      "mx-auto",
+      "my-10",
+      "p-2",
+      "rounded-lg",
+      "text-3xl",
+      "text-black",
+      "tracking-tight",
+      "uppercase"
+    ],
+    "ids": [
+      "block-elements",
+      "blockquotes",
+      "code",
+      "code-blocks",
+      "emphasis",
+      "headers",
+      "links",
+      "lists",
+      "paragraphs-and-line-breaks",
+      "philosophy",
+      "some-markdown-sample-text",
+      "span-elements",
+      "this-is-a-header"
+    ]
+  }
+}
