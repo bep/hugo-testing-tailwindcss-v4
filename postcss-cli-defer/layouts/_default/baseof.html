@@ -8,15 +8,24 @@
     <meta name="description" content="{{ .Description }}" />
     {{ with (templates.Defer (dict "key" "global")) }}
       {{ $t := debug.Timer "tailwindcss" }}
-      {{ $options := dict
-        "inlineImports" true
-      }}
-      {{ $styles := resources.Get "css/styles.css" }}
-      {{ $styles = $styles | css.PostCSS $options }}
-      {{ if hugo.IsProduction }}
-        {{ $styles = $styles | minify | fingerprint }}
+      {{ with resources.Get "css/styles.css" }}
+        {{ $opts := dict
+          "inlineImports" true
+        }}
+        {{ with . | css.PostCSS $opts }}
+          {{ if hugo.IsDevelopment }}
+            <link rel="stylesheet" href="{{ .RelPermalink }}" />
+          {{ else }}
+            {{ with . | minify | fingerprint }}
+              <link
+                rel="stylesheet"
+                href="{{ .RelPermalink }}"
+                integrity="{{ .Data.Integrity }}"
+                crossorigin="anonymous" />
+            {{ end }}
+          {{ end }}
+        {{ end }}
       {{ end }}
-      <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
       {{ $t.Stop }}
     {{ end }}
   </head>

@@ -7,16 +7,26 @@
     </title>
     <meta name="description" content="{{ .Description }}" />
     {{ $t := debug.Timer "tailwindcss" }}
-    {{ $options := dict
-      "inlineImports" true
-      "optimize" hugo.IsProduction
-    }}
-    {{ $styles := resources.Get "css/styles.css" }}
-    {{ $styles = $styles | css.TailwindCSS $options }}
-    {{ if hugo.IsProduction }}
-      {{ $styles = $styles | minify | fingerprint }}
+    {{ with resources.Get "css/styles.css" }}
+      {{ $opts := dict
+        "inlineImports" true
+        "optimize" hugo.IsProduction
+      }}
+      {{ with . | css.TailwindCSS $opts }}
+        {{ if hugo.IsDevelopment }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" />
+        {{ else }}
+          {{ with . | minify | fingerprint }}
+            <link
+              rel="stylesheet"
+              href="{{ .RelPermalink }}"
+              integrity="{{ .Data.Integrity }}"
+              crossorigin="anonymous" />
+          {{ end }}
+        {{ end }}
+      {{ end }}
     {{ end }}
-    <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+
     {{ $t.Stop }}
   </head>
   <body class="my-10">
