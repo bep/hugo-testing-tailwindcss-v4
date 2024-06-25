@@ -7,7 +7,7 @@
     </title>
     <meta name="description" content="{{ .Description }}" />
     {{ with (templates.Defer (dict "key" "global")) }}
-      {{ $t := debug.Timer "tailwindcss" }}
+      {{ $t := debug.Timer "postcss" }}
       {{ with resources.Get "css/styles.css" }}
         {{ $opts := dict
           "inlineImports" true
