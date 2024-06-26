@@ -10,7 +10,7 @@
     {{ with resources.Get "css/styles.css" }}
       {{ $opts := dict
         "inlineImports" true
-        "optimize" hugo.IsProduction
+        "optimize" (not hugo.IsDevelopment)
       }}
       {{ with . | css.TailwindCSS $opts }}
         {{ if hugo.IsDevelopment }}
