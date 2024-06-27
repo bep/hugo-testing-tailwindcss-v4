@@ -24,10 +24,7 @@
       "ul"
     ],
     "classes": [
-      "bg-blue-50",
       "bg-green-50",
-      "bg-indigo-50",
-      "bg-orange-50",
       "font-bold",
       "highlight",
       "markdown",
