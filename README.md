@@ -1,5 +1,7 @@
 
 
+>**Note:** The TailwindCSS v4 alpha 25 is broken and should not be used, see https://github.com/tailwindlabs/tailwindcss/issues/14521. This will be fixed in the next alpha release.
+
 Hugo `v0.128.0` added improved support for the upcoming [TailwindCSS v4](https://tailwindcss.com/blog/tailwindcss-v4-alpha).
 
 
