@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.0.0-alpha.34",
-    "tailwindcss": "^4.0.0-alpha.34"
+    "@tailwindcss/cli": "^4.0.0-beta.1",
+    "tailwindcss": "^4.0.0-beta.1"
   }
 }
