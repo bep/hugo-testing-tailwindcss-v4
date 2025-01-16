@@ -7,8 +7,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tailwindcss/postcss": "^4.0.0-beta.6",
+    "@tailwindcss/postcss": "^4.0.0-beta.9",
     "postcss-cli": "^10.1.0",
-    "tailwindcss": "^4.0.0-beta.6"
+    "tailwindcss": "^4.0.0-beta.9"
   }
 }
